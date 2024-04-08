@@ -76,3 +76,9 @@ footer {
     left: 50%;
     transform: translate(-50%, -50%);
 }
+
+table th, td {
+
+    font-family: 'Delicious Handrawn', cursive; 
+
+}
