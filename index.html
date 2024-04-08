@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rick and Morty</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <video autoplay muted loop id="video_background">
+        <source src="Rick y Morty necesitan vacaciones _ Español doblado _ HBO Max.mp4" type="video/mp4"/>
+    </video>
+
+    <main>
+        <h1>Rick and Morty</h1>
+        <hr>
+        <input id="txt-character" class="finder-character" type="text" placeholder="Search for a character">
+        <table id="character-table">
+            <thead>
+                <tr>
+                    <th>Image</th>
+                    <th>Name</th>
+                    <th>Gender</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody id="table-body">
+                <!-- Table rows will be added dynamically here -->
+            </tbody>
+        </table>
+    </main>
+    <footer>
+        <p>@lufeex dev</p>
+    </footer>
+    <script src="app.js"></script>
+</body>
+</html>
