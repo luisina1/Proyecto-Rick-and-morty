@@ -1,18 +1,9 @@
 
-@keyframes pulseTitle {
-    0% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.1);
-    }
-    100% {
-        transform: scale(1);
-    }
-}
+@import url('https://fonts.googleapis.com/css2?family=Delicious+Handrawn&display=swap');
+
 * {
     box-sizing: border-box;
-    font-family: Arial, sans-serif;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
 }
 
 main {
@@ -22,12 +13,18 @@ main {
 }
 
 h1 {
-    text-align: center;
-    text-decoration: underline;
-    padding: 10px;
-    animation: pulseTitle 2s ease-in-out infinite; 
+    font-size: 5rem;
+    text-shadow: 0 0 15px #fff000;
+    color: #00ffff;
+    font-family: 'Delicious handrawn', cursive;
+    animation: tittle 1s infinite;
+}
 
-    background-color: darkolivegreen;
+@keyframes tittle {
+    50% {
+        text-shadow: 0 0 15px #00ffff;
+        color: #fff000
+    }
 }
 
 input {
@@ -38,12 +35,12 @@ input {
 
 table {
     width: 100%;
-    border-collapse:inherit;
-    background-color: rgb(63, 106, 106);
+    border-collapse: collapse;
+    background-color: rgb(63,106,106);
 }
 
 th, td {
-    border: 1px solid #dddddd;
+    border: 1px solid #ddd;
     padding: 8px;
     text-align: left;
 }
@@ -60,4 +57,22 @@ img {
 footer {
     text-align: center;
     margin-top: 50px;
+}
+
+#video_background {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1000;
+}
+
+#video_background video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
