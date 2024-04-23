@@ -7,7 +7,7 @@ const URL2 = "https://rickandmortyapi.com/api/character/?name=";
 const getApi = async (URL) => {
 =======
 
-let sortDirection = 'asc';
+let sortDirection = 'asc'; // Variable para almacenar la dirección de la ordenación
 
 const getApi = async(URL) => {
 >>>>>>> 8eb091f04072bdf84d5cb640634e6cafb310e768
@@ -96,6 +96,7 @@ const sortTable = (sortBy) => {
 window.addEventListener('DOMContentLoaded', generateAllCharacters);
 txtCharacter.addEventListener('keyup', getCharacterByName);
 
+// Agregar event listeners para ordenar por cada encabezado de columna
 document.getElementById('name-header').addEventListener('click', () => {
     sortTable('name');
 });
