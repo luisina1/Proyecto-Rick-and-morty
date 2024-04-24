@@ -6,6 +6,9 @@ const URL2 = "https://rickandmortyapi.com/api/character/?name=";
 <<<<<<< HEAD
 const getApi = async (URL) => {
 =======
+
+let sortDirection = 'asc'; // Variable para almacenar la dirección de la ordenación
+
 const getApi = async(URL) => {
 >>>>>>> 8eb091f04072bdf84d5cb640634e6cafb310e768
     const response = await fetch(URL);
@@ -41,8 +44,8 @@ const createRow = (character) => {
     statusCell.textContent = character.status;
 
 <<<<<<< HEAD
-    const speciesCell = document.createElement('td'); 
-    speciesCell.textContent = character.species; 
+    const speciesCell = document.createElement('td');
+    speciesCell.textContent = character.species;
 
     const locationCell = document.createElement('td');
     locationCell.textContent = '';
@@ -54,7 +57,7 @@ const createRow = (character) => {
     row.appendChild(genderCell);
     row.appendChild(statusCell);
 <<<<<<< HEAD
-    row.appendChild(speciesCell); 
+    row.appendChild(speciesCell);
     row.appendChild(locationCell);
 
     tableBody.appendChild(row);
@@ -64,7 +67,7 @@ const createRow = (character) => {
         const response = await fetch(`https://rickandmortyapi.com/api/character/${characterId}`);
         const data = await response.json();
         const characterLocations = data.location;
-        locationCell.textContent = characterLocations.name; 
+        locationCell.textContent = characterLocations.name;
     });
 
 =======
@@ -73,7 +76,7 @@ const createRow = (character) => {
 >>>>>>> 8eb091f04072bdf84d5cb640634e6cafb310e768
 }
 
-const generateAllCharacters = async () => { 
+const generateAllCharacters = async () => {
     const data = await getApi(URL1);
     data.forEach(character => createRow(character));
 }
@@ -84,8 +87,28 @@ const getCharacterByName = async (event) => {
     data.forEach(character => createRow(character));
 }
 
+const sortTable = (sortBy) => {
+    sortDirection = sortDirection === 'asc' ? 'desc' : 'asc'; // Cambiar la dirección de ordenación
+    tableBody.innerHTML = ''; // Limpiar la tabla antes de volver a llenarla
+    generateAllCharacters(sortBy); // Generar los personajes ordenados
+}
+
 window.addEventListener('DOMContentLoaded', generateAllCharacters);
 txtCharacter.addEventListener('keyup', getCharacterByName);
+
+// Agregar event listeners para ordenar por cada encabezado de columna
+document.getElementById('name-header').addEventListener('click', () => {
+    sortTable('name');
+});
+
+document.getElementById('gender-header').addEventListener('click', () => {
+    sortTable('gender');
+});
+
+document.getElementById('status-header').addEventListener('click', () => {
+    sortTable('status');
+});
+
 <<<<<<< HEAD
 
 
